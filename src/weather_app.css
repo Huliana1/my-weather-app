@@ -1,0 +1,124 @@
+body {
+  width: 55%;
+  height: 100%;
+  border: solid 2px #24527a;
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
+}
+html {
+  height: 70%;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  margin-left: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  text-align: left;
+  font-size: 34px;
+  line-height: 48px;
+
+  font-weight: 900;
+  color: #24527a;
+}
+
+h2 {
+  text-align: left;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 48px;
+  padding: 0 0 24px;
+  color: #24527a;
+}
+
+p {
+  text-align: left;
+}
+
+.button-container {
+  margin: 60px 0;
+}
+table {
+  border-style: solid;
+  border-top: solid 2px black;
+  border-right: solid 2px black;
+  border-bottom: solid 2px black;
+  border-left: solid 2px black;
+  width: 40%;
+  margin-left: 320px;
+  margin-top: -150px;
+}
+.wind,
+.kmH,
+.humidity,
+.procentage {
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+  border-style: solid;
+  text-align: center;
+  width: 50%;
+}
+.wind,
+.humidity {
+  border-bottom: solid 2px black;
+}
+
+.col-3 {
+  text-align: center;
+  color: #59748c;
+}
+
+.input-group {
+  padding: 20px;
+}
+.weekdays {
+  position: relative;
+  top: 150px;
+}
+button {
+  border-radius: 25px;
+  border: 1px solid #8064e9;
+  background: #8064e9;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  line-height: 22px;
+  padding: 16px 24px;
+  text-decoration: none;
+  transition: all 200ms ease;
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #5e41a7;
+}
+.days {
+  position: relative;
+  top: 100px;
+  color: #59748c;
+}
+.icons {
+  position: relative;
+  top: 110px;
+  color: #24527a;
+}
+.temperature {
+  position: relative;
+  top: 120px;
+}
+.days,
+.icons,
+.temperature {
+  text-align: center;
+}
+#celsius,
+#fahrenheit {
+  text-decoration: none;
+  color: #24527a;
+}
