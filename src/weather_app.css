@@ -35,7 +35,7 @@ h2 {
   color: #24527a;
 }
 
-p {
+.day {
   text-align: left;
 }
 
@@ -121,4 +121,10 @@ button:hover {
 #fahrenheit {
   text-decoration: none;
   color: #24527a;
+}
+.source-link {
+  color: #24527a;
+  text-align: center;
+  position: relative;
+  top: 190px;
 }
