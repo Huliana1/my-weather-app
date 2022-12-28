@@ -74,6 +74,10 @@ function showWeather(response) {
   );
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#percentage");
+  let windElement = document.querySelector("#kmH");
+  humidityElement.innerHTML = response.data.main.humidity + `%`;
+  windElement.innerHTML = Math.round(response.data.wind.speed) + `km/h`;
 }
 
 function holdSubmit(event) {
