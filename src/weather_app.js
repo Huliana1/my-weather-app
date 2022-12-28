@@ -28,7 +28,6 @@ dateElement.innerHTML = formatDate(currentTime);
 
 function search(event) {
   event.preventDefault();
-
   let cityInput = document.querySelector("#city-input");
   let city = cityInput.value;
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -42,31 +41,45 @@ searchForm.addEventListener("submit", search);
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round((celciusTemperature * 9) / 5 + 32);
 }
 
-function convertToCelsius(event) {
+let celciusTemperature = null;
+
+function displayCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
-var fahrenheitLink = document.querySelector("#fahrenheit");
+let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
-var celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", convertToCelsius);
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
 
 function showWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#city").innerHTML = response.data.name;
+  celciusTemperature = response.data.main.temp;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
 }
 
 function holdSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  searchCity(city);
+  search(city);
 }
 
 function searchLocation(position) {
@@ -85,9 +98,4 @@ searchForm.addEventListener("submit", holdSubmit);
 currentButton = document.querySelector("#current-button");
 
 currentButton.addEventListener("click", getCurrentLocation);
-let iconElement = document.querySelector("#icon");
-iconElement.setAttribute(
-  "src",
-  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-);
-//iconElement.setAttribute("alt", response.data.weather[0].description);
+search("New York");
