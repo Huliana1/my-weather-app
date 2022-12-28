@@ -100,3 +100,24 @@ currentButton = document.querySelector("#current-button");
 
 currentButton.addEventListener("click", getCurrentLocation);
 search("Toronto");
+
+function getOshawa() {
+  search("Oshawa");
+}
+function getKitchener() {
+  search("Kitchener");
+}
+function getMarkham() {
+  search("Markham");
+}
+function getBrampton() {
+  search("Brampton");
+}
+let oshawa = document.querySelector("#oshawa");
+let kitchener = document.querySelector("#kitchener");
+let markham = document.querySelector("#markham");
+let brampton = document.querySelector("#brampton");
+oshawa.addEventListener("click", getOshawa);
+kitchener.addEventListener("click", getKitchener);
+markham.addEventListener("click", getMarkham);
+brampton.addEventListener("click", getBrampton);
