@@ -83,7 +83,7 @@ function showWeather(response) {
 function holdSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
-  search(city);
+  //search(city);
 }
 
 function searchLocation(position) {
