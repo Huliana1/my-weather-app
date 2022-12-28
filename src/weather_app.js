@@ -26,15 +26,6 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-function search(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input");
-  let city = cityInput.value;
-  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
@@ -80,11 +71,17 @@ function showWeather(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed) + `km/h`;
 }
 
-function holdSubmit(event) {
-  event.preventDefault();
-  let city = document.querySelector("#city-input").value;
-  //search(city);
+function search(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  search(cityInputElement.value);
+}
+let cityInputElement = document.querySelector("#city-input");
 
 function searchLocation(position) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
@@ -97,9 +94,9 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-searchForm.addEventListener("submit", holdSubmit);
+searchForm.addEventListener("submit", handleSubmit);
 
 currentButton = document.querySelector("#current-button");
 
 currentButton.addEventListener("click", getCurrentLocation);
-search("New York");
+search("Toronto");
