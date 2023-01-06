@@ -147,3 +147,12 @@ button:hover {
 #description:first-letter {
   text-transform: uppercase;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 180px;
+  font-size: 17px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.5;
+}
