@@ -103,11 +103,7 @@ button:hover {
   cursor: pointer;
   background: #5e41a7;
 }
-.days {
-  position: relative;
-  top: 100px;
-  color: #59748c;
-}
+
 .icons {
   position: relative;
   top: 110px;
@@ -149,10 +145,11 @@ button:hover {
 }
 .weather-forecast {
   text-align: center;
-  margin-top: 180px;
   font-size: 17px;
 }
-
 .weather-forecast-temperature-min {
   opacity: 0.5;
+}
+#forecast {
+  margin-top: 150px;
 }
