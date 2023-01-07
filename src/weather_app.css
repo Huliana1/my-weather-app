@@ -49,10 +49,10 @@ h2 {
 }
 table {
   border-style: solid;
-  border-top: solid 2px black;
-  border-right: solid 2px black;
-  border-bottom: solid 2px black;
-  border-left: solid 2px black;
+  border-top: solid 2px #24527a;
+  border-right: solid 2px #24527a;
+  border-bottom: solid 2px #24527a;
+  border-left: solid 2px #24527a;
   width: 40%;
   margin-left: 320px;
   margin-top: -150px;
@@ -61,15 +61,16 @@ table {
 .kmH,
 .humidity,
 .procentage {
-  border-right: solid 2px black;
-  border-left: solid 2px black;
+  color: #24527a;
+  border-right: solid 2px#24527a;
+  border-left: solid 2px #24527a;
   border-style: solid;
   text-align: center;
   width: 50%;
 }
 .wind,
 .humidity {
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px #24527a;
 }
 
 .col-3 {
@@ -104,19 +105,9 @@ button:hover {
   background: #5e41a7;
 }
 
-.icons {
-  position: relative;
-  top: 110px;
-  color: #24527a;
-}
 .temperature {
   position: relative;
   top: 120px;
-}
-.days,
-.icons,
-.temperature {
-  text-align: center;
 }
 
 #fahrenheit,
@@ -152,4 +143,8 @@ button:hover {
 }
 #forecast {
   margin-top: 150px;
+  color: #24527a;
+}
+img {
+  filter: brightness(40%);
 }
